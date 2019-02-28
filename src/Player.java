@@ -9,6 +9,7 @@ public class Player {
         Board.status = "playing";
     }
 
+    // this is where the user's guesses are collected and sent to the Board to analyze and update
     public String useGuess(int[] xAndY){
         String result = own.enterGuess(xAndY);
         if (own.boatsSunk == 4){
@@ -21,15 +22,13 @@ public class Player {
         }
     }
 
-    public Board getOwn() {
-        return own;
+    public String cheater(){
+        String result = own.testPlacement();
+        return result;
     }
 
-    public void changeOwn(int input) {
-        // stuff about changing board, blah de blah blah
-    }
-
-    public String tester(){
-        return own.testPlacement();
+    // this just helps test some of the Board methods
+    public String tester(int column){
+        return own.displayBoard(column);
     }
 }

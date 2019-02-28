@@ -11,6 +11,7 @@ public class Opponent {
         Board.status = "playing";
     }
 
+    // this is where the computer randomly guesses a location and sends that guess to the Board
     public String randomGuess(){
         Random random = new Random();
         int xRand = random.nextInt(8);
